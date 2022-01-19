@@ -13,6 +13,7 @@
         "symfony/framework-bundle": "5.4.*",
         "symfony/maker-bundle": "^1.36",
         "symfony/runtime": "5.4.*",
+        "symfony/twig-bundle": "5.4.*",
         "symfony/yaml": "5.4.*"
     },
     "config": {
