@@ -15,6 +15,7 @@
         "symfony/maker-bundle": "^1.36",
         "symfony/runtime": "5.4.*",
         "symfony/twig-bundle": "5.4.*",
+        "symfony/webpack-encore-bundle": "^1.13",
         "symfony/yaml": "5.4.*"
     },
     "config": {
