@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d0eec16b9648a9cb97bba76016d948a3",
+    "content-hash": "28373c83665252cd7631b7b6100f9151",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -244,6 +244,16 @@
                 }
             ],
             "time": "2022-01-12T08:27:12+00:00"
+        },
+        {
+            "name": "jdz/favicon",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/joffreydemetz/favicon.git",
+                "reference": "master"
+            },
+            "type": "library"
         },
         {
             "name": "nikic/php-parser",
