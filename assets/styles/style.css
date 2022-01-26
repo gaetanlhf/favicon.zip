@@ -1,0 +1,12 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.heart {
+    color: red;
+}
+
+.github-fork-ribbon:before {
+    background-color: rgb(33, 37, 41);
+}
