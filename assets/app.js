@@ -9,7 +9,9 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css"
 import "github-fork-ribbon-css/gh-fork-ribbon.css"
-import './styles/style.css';
+import "./styles/style.css";
+
+import "bootstrap/dist/js/bootstrap.bundle";
 
 // start the Stimulus application
-// import './bootstrap';
+import './bootstrap';
