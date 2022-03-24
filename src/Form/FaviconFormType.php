@@ -59,7 +59,7 @@ class FaviconFormType extends AbstractType
             ], 'placeholder' => false, 'required' => false])
             ->add('apple', CheckboxType::class, ['label' => 'Generate old apple touch images', 'label_attr' => ['class' => 'checkbox-switch'], 'attr' => ['autocomplete' => 'off'], 'required' => false])
             ->add('ms', CheckboxType::class, ['label' => 'Generate Windows and IE tile images', 'label_attr' => ['class' => 'checkbox-switch'], 'attr' => ['autocomplete' => 'off'], 'required' => false])
-            ->add('submit', SubmitType::class, ['label' => 'Generate']);
+            ->add('submit', SubmitType::class, ['label' => 'Generate', 'attr' => ['class' => 'btn btn-primary btn-lg w-100 mx-0']]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
