@@ -1,17 +1,92 @@
-{% extends 'base.html.twig' %}
+{% extends '_base.html.twig' %}
 
-{% block title %}Faviconator{% endblock %}
+{% block title %}Faviconator
+{% endblock %}
 
 {% block body %}
-<div class="container my-5">
-    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
-      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-        <h1 class="display-4 fw-bold lh-1">A new and easy way to generate favicons</h1>
-        <p class="lead">Lorem ipsum</p>
-      </div>
-      <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-          <img class="rounded-lg-3" src="#" alt="" width="720">
-      </div>
-    </div>
-  </div>
+	<div class="container my-5">
+		<div class="row p-4 pb-0 pt-lg-5 p-lg-5 align-items-center rounded-3 border shadow-lg">
+			<div class="text-center">
+				<div class="d-block mx-auto align-items-center">
+					<i aria-hidden="true" class="bi bi-lightning-fill fs-1 mx-2"></i>
+				</div>
+				<h1 class="display-5 fw-bold">A new and easy way to generate favicons</h1>
+				<div class="col-lg-6 mx-auto">
+					<p class="lead mb-4">Generating favicons has never been so quick and easy.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		{% for message in app.flashes('generator_error') %}
+			<div class="alert alert-danger alert-dismissible fade show">
+				<i class="bi bi-exclamation-triangle-fill bi-fw" aria-hidden="true"></i>
+				{{ message }}
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+		{% endfor %}
+		{% for messages in app.flashes('form_error') %}
+			<div class="alert alert-danger alert-dismissible fade show">
+				<i class="bi bi-exclamation-triangle-fill bi-fw" aria-hidden="true"></i>
+				{% for message in messages %}
+					{{ message }}<br>
+				{% endfor %}
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+		{% endfor %}
+		<div class="d-flex justify-content-end mb-3">
+			<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#settings">
+				<i class="bi bi-gear-fill bi-fw" aria-hidden="true"></i>
+			</button>
+		</div>
+		{{ form_start(faviconForm, {'action': path('app_generate'), 'method': 'POST'}) }}
+		{{ form_widget(faviconForm.drop) }}
+		<div class="d-flex justify-content-center flex-column mt-3">
+			{{ form_row(faviconForm.submit) }}
+		</div>
+	</div>
+	<div class="modal fade py-5" tabindex="-1" role="dialog" aria-labelledby="settingsLabel" aria-hidden="true" data-bs-keyboard="false" id="settings">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content rounded-6 shadow">
+				<div class="modal-header border-bottom-0">
+					<h5 class="d-flex modal-title align-items-center" id="settingsLabel">Settings</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body py-0">
+					{{ form_row(faviconForm.fortyEightIco) }}
+					{{ form_row(faviconForm.sixtyFourIco) }}
+					{{ form_row(faviconForm.android) }}
+					<div class="collapse m-3" id="collapseAndroid">
+						<div class="mb-3">
+							{{ form_row(faviconForm.appName) }}
+						</div>
+						<div class="mb-3">
+							{{ form_row(faviconForm.shortAppName) }}
+						</div>
+						<div class="mb-3">
+							{{ form_row(faviconForm.language) }}
+						</div>
+						<div class="mb-3">
+							{{ form_row(faviconForm.startUrl) }}
+						</div>
+						<div class="mb-3">
+							{{ form_row(faviconForm.themeColour) }}
+						</div>
+						<div class="mb-3">
+							{{ form_row(faviconForm.backgroundColour) }}
+						</div>
+						<div class="mb-3">
+							{{ form_row(faviconForm.display) }}
+						</div>
+					</div>
+					{{ form_row(faviconForm.apple) }}
+					{{ form_row(faviconForm.ms) }}
+				</div>
+				<div class="modal-footer flex-column border-top-0">
+					<button type="button" class="btn btn-primary btn-lg w-100 mx-0" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{ form_end(faviconForm) }}
 {% endblock %}
