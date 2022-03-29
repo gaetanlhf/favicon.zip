@@ -1,0 +1,47 @@
+<?php
+
+namespace App\Helper;
+
+use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use RecursiveDirectoryIterator;
+use FilesystemIterator;
+use RecursiveIteratorIterator;
+use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
+use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
+
+class UploaderHelper
+{
+    private $filesystem;
+    private $flashBag;
+
+    public function __construct(Filesystem $filesystem, FlashBagInterface $flashBag)
+    {
+        $this->filesystem = $filesystem;
+        $this->flashBag = $flashBag;
+    }
+
+    public function deleteUploadedFile(string $path, string $id)
+    {
+        try {
+            $this->filesystem->remove($path . $id . ".png");
+            $di = new RecursiveDirectoryIterator($path . $id . "/", FilesystemIterator::SKIP_DOTS);
+            $ri = new RecursiveIteratorIterator($di, RecursiveIteratorIterator::CHILD_FIRST);
+            foreach ($ri as $file) {
+                $file->isDir() ?  $this->filesystem->remove($file) : $this->filesystem->remove($file);
+            }
+            $this->filesystem->remove($path . $id . "/");
+            $this->filesystem->remove("favicon-". $id . ".zip");
+        } catch (IOExceptionInterface $e) {
+            $this->flashBag->add('generator_error', $e->getMessage());
+        }
+    }
+
+    public function uploadFile(string $imgPath, UploadedFile $uploadedfile): string
+    {
+        $id = uniqid();
+        $newImageFilename = $id . '.png';
+        $uploadedfile->move($imgPath, $newImageFilename);
+        return $id;
+    }
+}
