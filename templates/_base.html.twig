@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html class="h-100" lang="en">
+	<meta charset="UTF-8">
+	<title>
+		{% block title %}Faviconator
+		{% endblock %}
+	</title>
+	{% block stylesheets %}
+		{{ encore_entry_link_tags('app') }}
+	{% endblock %}
+
+	{% block javascripts %}
+		{{ encore_entry_script_tags('app') }}
+	{% endblock %}
+</html></head><body class="d-flex flex-column h-100">
+<a class="github-fork-ribbon left-top" href="https://github.com/gaetanlhf/Faviconator" data-ribbon="Fork me on GitHub" title="Fork me on GitHub" aria-hidden="true">Fork me on GitHub</a>
+<div class="d-flex flex-column h-100">
+	{% include "_header.html.twig" %}
+	{% block body %}{% endblock %}
+	{% include "_footer.html.twig" %}
+</div></body></html>
