@@ -39,9 +39,14 @@ class UploaderHelper
 
     public function uploadFile(string $imgPath, UploadedFile $uploadedfile): string
     {
-        $id = uniqid();
-        $newImageFilename = $id . '.png';
-        $uploadedfile->move($imgPath, $newImageFilename);
-        return $id;
+        try {
+            $id = uniqid();
+            $newImageFilename = $id . '.png';
+            $uploadedfile->move($imgPath, $newImageFilename);
+            return $id;
+        } catch (IOExceptionInterface $e) {
+            $this->flashBag->add('generator_error', $e->getMessage());
+            return null;
+        }
     }
 }
