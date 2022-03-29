@@ -7,6 +7,137 @@ html {
     color: red;
 }
 
+.github-fork-ribbon {
+    z-index: 100;
+}
+
 .github-fork-ribbon:before {
     background-color: rgb(33, 37, 41);
+}
+
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+.rounded-6 {
+    border-radius: 1rem;
+}
+
+.modal-dialog {
+    width: 500px;
+    transition: bottom .75s ease-in-out;
+}
+
+.modal-footer {
+    padding-bottom: 2rem;
+}
+
+.modal-alert .modal-dialog {
+    width: 500px;
+}
+
+.border-right {
+    border-right: 1px solid #eee;
+}
+
+.bi-fw {
+    display: inherit;
+    width: 1.28571429em;
+    text-align: center;
+}
+
+.dropzone-container {
+    min-height: auto;
+    text-align: center;
+    cursor: pointer;
+    border: 1px dashed #dee2e6;
+    background-color: #ffffff;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
+    border-radius: .3rem !important;
+    position: relative;
+    display: flex;
+    min-height: 100px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+.dropzone-input {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.dropzone-preview {
+    display: flex;
+    max-width: 100%;
+    align-items: center;
+}
+
+.dropzone-preview-image {
+    justify-content: center;
+    min-width: 100px;
+    max-width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.dropzone-preview-filename {
+    word-wrap: anywhere;
+}
+
+.dropzone-preview-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+}
+
+.dropzone-preview-button::before {
+    content: '×';
+    padding: 3px 7px;
+    cursor: pointer;
+}
+
+.dropzone-placeholder {
+    flex-grow: 1;
+    text-align: center;
+    font-weight: 600;
+}
+
+.dropzone-placeholder::before {
+    display: block;
+    margin-bottom: -5px;
+    font-size: 3rem;
+    font-family: bootstrap-icons;
+    content: "\F296";
+}
+
+.dropzone-placeholder::after {
+    content: "\a  Image in .png format and less than 1 MB in size";
+    font-size: 12px;
+    font-weight: 400;
+    white-space: pre;
 }
