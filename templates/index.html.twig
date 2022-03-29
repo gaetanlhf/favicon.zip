@@ -20,14 +20,14 @@
 	<div class="container">
 		{% for message in app.flashes('generator_error') %}
 			<div class="alert alert-danger alert-dismissible fade show">
-				<i class="bi bi-exclamation-triangle-fill bi-fw" aria-hidden="true"></i>
+				<i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i>
 				{{ message }}
 				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>
 		{% endfor %}
 		{% for messages in app.flashes('form_error') %}
 			<div class="alert alert-danger alert-dismissible fade show">
-				<i class="bi bi-exclamation-triangle-fill bi-fw" aria-hidden="true"></i>
+				<i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i>
 				{% for message in messages %}
 					{{ message }}<br>
 				{% endfor %}
