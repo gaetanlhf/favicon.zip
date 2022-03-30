@@ -24,7 +24,7 @@ class GenerateController extends AbstractController
             if ($id == null) {
                 return $this->redirectToRoute('app_home');
             }
-            $favicon = $faviconHelper->generate($this->getParameter('img_temp'), $id, $data["appName"], $data["shortAppName"], $data["language"], $data["startUrl"], $data["themeColour"], $data["backgroundColour"], $data["display"], $data["sixtyFourIco"], $data["fortyEightIco"], $data["apple"], $data["android"], $data["ms"]);
+            $favicon = $faviconHelper->generate($this->getParameter('img_temp'), $id, $data["appName"], $data["shortAppName"], $data["language"], $data["startUrl"], $data["themeColour"], $data["backgroundColour"], $data["display"], $data["sixtyFourIco"], $data["fortyEightIco"], $data["apple"], $data["android"], $data["ms"], $data["tileColour"]);
             $uploaderHelper->deleteUploadedFile($this->getParameter('img_temp'), $id);
             if ($favicon == null) {
                 return $this->redirectToRoute('app_home');
