@@ -58,7 +58,10 @@ class FaviconFormType extends AbstractType
                 'Browser' => 'browser'
             ], 'placeholder' => false, 'required' => false])
             ->add('apple', CheckboxType::class, ['label' => 'Generate old apple touch images', 'label_attr' => ['class' => 'checkbox-switch'], 'attr' => ['autocomplete' => 'off'], 'required' => false])
-            ->add('ms', CheckboxType::class, ['label' => 'Generate Windows and IE tile images', 'label_attr' => ['class' => 'checkbox-switch'], 'attr' => ['autocomplete' => 'off'], 'required' => false])
+            ->add('ms', CheckboxType::class, ['label' => 'Generate Windows and IE tile images', 'label_attr' => ['class' => 'checkbox-switch'], 'attr' => ['data-bs-toggle' => 'collapse', 'data-bs-target' => '#collapseMs', 'autocomplete' => 'off'], 'required' => false])
+            ->add('tileColour', TextType::class, ['label' => 'Tile colour', 'attr' => ['placeholder' => '#333', 'value' => '#333'], 'row_attr' => [
+                'class' => 'form-floating',
+            ], 'required' => false])
             ->add('submit', SubmitType::class, ['label' => 'Generate', 'attr' => ['class' => 'btn btn-primary btn-lg w-100 mx-0']]);
     }
 
