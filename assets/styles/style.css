@@ -51,7 +51,7 @@ html {
     min-height: auto;
     text-align: center;
     cursor: pointer;
-    border: 1px dashed #dee2e6;
+    border: 1px solid #dee2e6 !important;
     background-color: #ffffff;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
     border-radius: .3rem !important;
@@ -125,11 +125,12 @@ html {
     flex-grow: 1;
     text-align: center;
     font-weight: 600;
+    margin-bottom: 1rem;
 }
 
 .dropzone-placeholder::before {
     display: block;
-    margin-bottom: -5px;
+    margin-bottom: -0.5rem;
     font-size: 3rem;
     font-family: bootstrap-icons;
     content: "\F296";
