@@ -7,6 +7,8 @@ use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\UX\Dropzone\Form\DropzoneType;
@@ -26,7 +28,7 @@ class FaviconFormType extends AbstractType
                         'mimeTypes' => [
                             'image/png'
                         ],
-                        'mimeTypesMessage' => 'The image format must be in .png and must not exceed 1 MB.'
+                        'mimeTypesMessage' => 'The image format must be .png.'
                     ])
                 ],
             ])
@@ -62,6 +64,7 @@ class FaviconFormType extends AbstractType
             ->add('tileColour', TextType::class, ['label' => 'Tile colour', 'attr' => ['placeholder' => '#333', 'value' => '#333'], 'row_attr' => [
                 'class' => 'form-floating',
             ], 'required' => false])
+            ->add('downloadToken', HiddenType::class)
             ->add('submit', SubmitType::class, ['label' => 'Generate', 'attr' => ['class' => 'btn btn-primary btn-lg w-100 mx-0']]);
     }
 
