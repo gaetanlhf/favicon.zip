@@ -3,6 +3,10 @@ html {
     min-height: 100%;
 }
 
+#use-js {
+    visibility: hidden;
+}
+
 .heart {
     color: red;
 }
@@ -25,16 +29,11 @@ html {
 }
 
 .modal-dialog {
-    width: 500px;
     transition: bottom .75s ease-in-out;
 }
 
 .modal-footer {
     padding-bottom: 2rem;
-}
-
-.modal-alert .modal-dialog {
-    width: 500px;
 }
 
 .border-right {
@@ -141,4 +140,46 @@ html {
     font-size: 12px;
     font-weight: 400;
     white-space: pre;
+}
+
+.spinner-container {
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    opacity: 0;
+}
+
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    #name {
+        color: rgb(255, 255, 255)
+    }
+
+    #logo {
+        filter: invert();
+    }
+
+    .shadow-lg {
+        box-shadow: 0 1rem 3rem rgba(255, 255, 255, .175) !important;
+    }
+
+    .dropzone-container {
+        align-items: center;
+        background-color: #222222;
+        border: 1px solid #515151 !important;
+        border-radius: .3rem !important;
+        box-shadow: 0 1rem 3rem rgba(255, 255, 255, .175) !important;
+    }
+
+    .border {
+        border: 1px solid #515151 !important;
+    }
 }

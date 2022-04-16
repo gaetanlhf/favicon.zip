@@ -1,21 +1,47 @@
 <!DOCTYPE html>
 <html class="h-100" lang="en">
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>
 		{% block title %}Faviconator
 		{% endblock %}
 	</title>
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+	<meta name="application-name" content="Faviconator"/>
+	<meta name="apple-mobile-web-app-title" content="Faviconator"/>
+	<meta name="theme-color" content="#212529"/>
+	<link rel="manifest" href="/manifest.json"/>
+	<meta name="color-scheme" content="light dark">
+	<link rel="icon" type="image/png" sizes="36x36" href="/android-chrome-36x36.png"/>
+	<link rel="icon" type="image/png" sizes="48x48" href="/android-chrome-48x48.png"/>
+	<link rel="icon" type="image/png" sizes="72x72" href="/android-chrome-72x72.png"/>
+	<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"/>
+	<link rel="icon" type="image/png" sizes="144x144" href="/android-chrome-144x144.png"/>
+	<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png"/>
+	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png"/>
+	<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png"/>
+	<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png"/>
+	<meta name="description" content="A new and easy way to generate favicons"/>
+	<meta name="keywords" content="generate, favicon, easy, code, html, web, png">
+	<meta name="author" content="Gaëtan L. H.-F."/>
 	{% block stylesheets %}
-		{{ encore_entry_link_tags('app') }}
+		{{ encore_entry_link_tags("app") }}
 	{% endblock %}
-
-	{% block javascripts %}
-		{{ encore_entry_script_tags('app') }}
-	{% endblock %}
-</html></head><body class="d-flex flex-column h-100">
-<a class="github-fork-ribbon left-top" href="https://github.com/gaetanlhf/Faviconator" data-ribbon="Fork me on GitHub" title="Fork me on GitHub" aria-hidden="true">Fork me on GitHub</a>
-<div class="d-flex flex-column h-100">
+</head><body class="d-flex flex-column h-100">
+<div class="spinner-container">
+	<div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
+		<div class="spinner-border" role="status">
+			<span class="visually-hidden">Loading...</span>
+		</div>
+	</div>
+</div>
+<div class="d-flex flex-column h-100" id="main">
+	<a class="github-fork-ribbon left-top" href="https://github.com/gaetanlhf/Faviconator" data-ribbon="Fork me on GitHub" title="Fork me on GitHub" aria-hidden="true">Fork me on GitHub</a>
 	{% include "_header.html.twig" %}
 	{% block body %}{% endblock %}
 	{% include "_footer.html.twig" %}
-</div></body></html>
+</div></body>{% block javascripts %}
+{{ encore_entry_script_tags("app") }}{% endblock %}</html>

@@ -1,4 +1,4 @@
-{% extends '_base.html.twig' %}
+{% extends "_base.html.twig" %}
 
 {% block title %}Faviconator
 {% endblock %}
@@ -8,7 +8,13 @@
 		<div class="row p-4 pb-0 pt-lg-5 p-lg-5 align-items-center rounded-3 border shadow-lg">
 			<div class="text-center">
 				<div class="d-block mx-auto align-items-center">
-					<i aria-hidden="true" class="bi bi-lightning-fill fs-1 mx-2"></i>
+					<svg id="logo" width="42.574" height="49" viewbox="0 0 11.264 12.965" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+						<path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641Z" transform="matrix(.54902 0 0 .54732 4.127 0)" style="fill:#212529"/>
+						<g style="fill:#212529">
+							<path d="M2.824 9.211a.941.938 0 1 0 0-1.876.941.938 0 0 0 0 1.876z"/>
+							<path d="M8.785 11.714a1.255 1.251 0 0 1-1.255 1.25H1.255A1.255 1.251 0 0 1 0 11.715V6.709a1.255 1.251 0 0 1 1.254-1.25 1.255 1.251 0 0 1 1.255-1.252h6.275a1.255 1.251 0 0 1 1.255 1.251v5.004a1.255 1.251 0 0 1-1.254 1.252zm-.001-6.881H2.509a.627.626 0 0 0-.628.625H7.53A1.255 1.251 0 0 1 8.785 6.71v4.379a.627.626 0 0 0 .626-.626V5.458a.627.626 0 0 0-.627-.625Zm-7.529 1.25a.627.626 0 0 0-.628.626v5.005l1.66-1.473a.314.313 0 0 1 .396-.039l1.67 1.11L6.68 8.99a.314.313 0 0 1 .362-.06l1.115 1.219V6.71a.627.626 0 0 0-.627-.626z"/>
+						</g>
+					</svg>
 				</div>
 				<h1 class="display-5 fw-bold">A new and easy way to generate favicons</h1>
 				<div class="col-lg-6 mx-auto">
@@ -17,15 +23,23 @@
 			</div>
 		</div>
 	</div>
-	<div class="container">
-		{% for message in app.flashes('generator_error') %}
+	<noscript>
+		<div class="container">
+			<div class="alert alert-danger fade show">
+				<i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i>
+				Please enable JavaScript to use Faviconator.
+			</div>
+		</div>
+	</noscript>
+	<div class="container" id="use-js">
+		{% for message in app.flashes("generator_error") %}
 			<div class="alert alert-danger alert-dismissible fade show">
 				<i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i>
 				{{ message }}
 				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>
 		{% endfor %}
-		{% for messages in app.flashes('form_error') %}
+		{% for messages in app.flashes("form_error") %}
 			<div class="alert alert-danger alert-dismissible fade show">
 				<i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i>
 				{% for message in messages %}
@@ -34,12 +48,20 @@
 				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>
 		{% endfor %}
-		<div class="d-flex justify-content-end mb-3">
-			<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#settings">
-				<i class="bi bi-gear-fill bi-fw" aria-hidden="true"></i>
-			</button>
+		<div id="successAlert"></div>
+		<div class="d-flex mb-3 align-items-center">
+			<div>
+				<button type="button" class="btn btn-primary btn-sm" onclick="window.location.reload();">
+					<i class="bi bi-arrow-clockwise bi-fw" aria-hidden="true"></i>
+				</button>
+			</div>
+			<div class="ms-auto">
+				<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#settings">
+					<i class="bi bi-gear-fill bi-fw" aria-hidden="true"></i>
+				</button>
+			</div>
 		</div>
-		{{ form_start(faviconForm, {'action': path('app_generate'), 'method': 'POST'}) }}
+		{{ form_start(faviconForm, {"action": path("app_generate"), "method": "POST"}) }}
 		{{ form_widget(faviconForm.drop) }}
 		<div class="d-flex justify-content-center flex-column mt-3">
 			{{ form_row(faviconForm.submit) }}
@@ -93,5 +115,6 @@
 			</div>
 		</div>
 	</div>
+	{{ form_row(faviconForm.downloadToken) }}
 	{{ form_end(faviconForm) }}
 {% endblock %}
