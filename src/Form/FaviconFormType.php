@@ -34,7 +34,7 @@ class FaviconFormType extends AbstractType
             ])
             ->add("fortyEightIco", CheckboxType::class, ["label" => "Include a 48x48 version in the .ico file",  "data" => false, "label_attr" => ["class" => "checkbox-switch"], "attr" => ["autocomplete" => "off"], "required" => false])
             ->add("sixtyFourIco", CheckboxType::class, ["label" => "Include a 64x64 version in the .ico file", "data" => false, "label_attr" => ["class" => "checkbox-switch"], "attr" => ["autocomplete" => "off"], "required" => false])
-            ->add("android", CheckboxType::class, ["label" => "Generate manifest.json and Android images", "data" => false, "label_attr" => ["class" => "checkbox-switch"], "attr" => ["data-bs-toggle" => "collapse", "data-bs-target" => "#collapseAndroid", "autocomplete" => "off"], "required" => false])
+            ->add("android", CheckboxType::class, ["label" => "Generate manifest.webmanifest and Android images", "data" => false, "label_attr" => ["class" => "checkbox-switch"], "attr" => ["data-bs-toggle" => "collapse", "data-bs-target" => "#collapseAndroid", "autocomplete" => "off"], "required" => false])
             ->add("appName", TextType::class, ["label" => "Application name", "attr" => ["placeholder" => "My app", "value" => "My app"], "row_attr" => [
                 "class" => "form-floating",
             ], "required" => false])

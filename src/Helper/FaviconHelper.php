@@ -44,12 +44,15 @@ class FaviconHelper
             $zip = new ZipArchive();
             $zipName = "favicon-" . $id . ".zip";
             $zip->open($zipName,  \ZipArchive::CREATE);
+            $faviconBuffer = $generator->getInfoBuffer();
             if ($android) {
                 $file = file_get_contents($path . $id . "/favicon/manifest.json");
                 $file = str_replace("\/", "/", $file);
                 $file = str_replace("/favicon/", "/", $file);
                 $this->filesystem->remove($path . $id . "/favicon/manifest.json");
                 $this->filesystem->appendToFile($path . $id . "/favicon/manifest.json", $file);
+                $this->filesystem->rename($path . $id . "/favicon/manifest.json", $path . $id . "/favicon/manifest.webmanifest");
+                $faviconBuffer = str_replace("manifest.json", "manifest.webmanifest", $faviconBuffer);
             }
             if ($ms) {
                 $file = file_get_contents($path . $id . "/favicon/browserconfig.xml");
@@ -58,7 +61,7 @@ class FaviconHelper
                 $this->filesystem->remove($path . $id . "/favicon/browserconfig.xml");
                 $this->filesystem->appendToFile($path . $id . "/favicon/browserconfig.xml", $file);
             }
-            foreach ($generator->getInfoBuffer() as $file) {
+            foreach ($faviconBuffer as $file) {
                 $zip->addFromString(basename($file),  file_get_contents($file));
             }
             $this->filesystem->appendToFile($path . $id . "/code.html", "<link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/favicon-16x16.png\" />");
@@ -67,7 +70,7 @@ class FaviconHelper
                 $this->filesystem->appendToFile($path . $id . "/code.html", "\n<meta name=\"application-name\" content=\"$appName\" />");
                 $this->filesystem->appendToFile($path . $id . "/code.html", "\n<meta name=\"apple-mobile-web-app-title\" content=\"$appName\" />");
                 $this->filesystem->appendToFile($path . $id . "/code.html", "\n<meta name=\"theme-color\" content=\"$themeColour\" />");
-                $this->filesystem->appendToFile($path . $id . "/code.html", "\n<link rel=\"manifest\" href=\"/manifest.json\" />");
+                $this->filesystem->appendToFile($path . $id . "/code.html", "\n<link rel=\"manifest\" href=\"/manifest.webmanifest\" />");
                 $this->filesystem->appendToFile($path . $id . "/code.html", "\n<link rel=\"icon\" type=\"image/png\" sizes=\"36x36\" href=\"/android-chrome-36x36.png\" />");
                 $this->filesystem->appendToFile($path . $id . "/code.html", "\n<link rel=\"icon\" type=\"image/png\" sizes=\"48x48\" href=\"/android-chrome-48x48.png\" />");
                 $this->filesystem->appendToFile($path . $id . "/code.html", "\n<link rel=\"icon\" type=\"image/png\" sizes=\"72x72\" href=\"/android-chrome-72x72.png\" />");
