@@ -1,4 +1,3 @@
-// import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-dark-5/dist/css/bootstrap-dark.min.css"
 import "bootstrap-icons/font/bootstrap-icons.css"
 import "github-fork-ribbon-css/gh-fork-ribbon.css"
