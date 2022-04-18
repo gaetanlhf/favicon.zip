@@ -3,13 +3,13 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>
-		{% block title %}Faviconator
+		{% block title %}{{ app_name }}
 		{% endblock %}
 	</title>
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
-	<meta name="application-name" content="Faviconator"/>
-	<meta name="apple-mobile-web-app-title" content="Faviconator"/>
+	<meta name="application-name" content="{{ app_name }}"/>
+	<meta name="apple-mobile-web-app-title" content="{{ app_name }}"/>
 	<meta name="theme-color" content="#212529"/>
 	<link rel="manifest" href="/manifest.webmanifest"/>
 	<meta name="color-scheme" content="light dark">
@@ -26,7 +26,7 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png"/>
 	<meta name="description" content="A new and easy way to generate favicons"/>
 	<meta name="keywords" content="generate, favicon, easy, code, html, web, png">
-	<meta name="author" content="Gaëtan L. H.-F."/>
+	<meta name="author" content="{{ author_name }}"/>
 	{% block stylesheets %}
 		{{ encore_entry_link_tags("app") }}
 	{% endblock %}
@@ -39,7 +39,7 @@
 	</div>
 </div>
 <div class="d-flex flex-column h-100" id="main">
-	<a class="github-fork-ribbon left-top" href="https://github.com/gaetanlhf/Faviconator" data-ribbon="Fork me on GitHub" title="Fork me on GitHub" aria-hidden="true">Fork me on GitHub</a>
+	<a class="github-fork-ribbon left-top" href="{{ git_link }}" data-ribbon="Fork me on GitHub" title="Fork me on GitHub" aria-hidden="true">Fork me on GitHub</a>
 	{% include "_header.html.twig" %}
 	{% block body %}{% endblock %}
 	{% include "_footer.html.twig" %}
