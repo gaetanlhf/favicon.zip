@@ -158,6 +158,11 @@ html {
     height: 3rem;
 }
 
+.text-muted a {
+    text-decoration: none;
+    color: #9e9e9e !important;
+}
+
 @media (prefers-color-scheme: dark) {
     #name {
         color: rgb(255, 255, 255)
