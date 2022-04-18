@@ -44,6 +44,7 @@ Don't forget to **generate the assets**:
 ```bash
 npm run build
 ```
+**NOTE**: You **do not need to transfer** the **`node_modules`** folder **to your server** once the assets have been compiled.
 
 ### Switch to production mode
 If you want to put the application into **production mode**:
@@ -64,4 +65,3 @@ This program is free software: you can redistribute it and/or modify it under th
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
 
 You should have received a copy of the GNU Affero General Public License along with this program. If not, see http://www.gnu.org/licenses/.
-
