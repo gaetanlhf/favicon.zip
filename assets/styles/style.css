@@ -165,7 +165,7 @@ html {
 
 @media (prefers-color-scheme: dark) {
     #name {
-        color: rgb(255, 255, 255)
+        color: #b1b1b1;
     }
 
     #logo {
