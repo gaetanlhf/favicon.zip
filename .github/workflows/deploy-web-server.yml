@@ -1,0 +1,49 @@
+name: Deploy to Web server
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup PHP
+      uses: "shivammathur/setup-php@v2"
+      with:
+        php-version: "8.0"
+
+    - name: Install PHP dependencies
+      uses: "ramsey/composer-install@v2"
+      with:
+        composer-options: "--optimize-autoloader"
+
+    - name: Install Node.js dependencies
+      run: npm install
+
+    - name: Build assets
+      run: npm run build
+
+    - name: Switch to production mode
+      run: composer dump-env prod
+
+    - name: Clear cache
+      run: php bin/console cache:clear
+
+    - name: Uploading to the Web server
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server-dir: ${{ secrets.ftp_dir }}
+        server: ${{ secrets.ftp_server }}
+        username: ${{ secrets.ftp_username }}
+        password: ${{ secrets.ftp_password }}
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
