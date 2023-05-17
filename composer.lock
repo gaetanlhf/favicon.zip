@@ -3817,7 +3817,7 @@
         },
         {
             "name": "symfony/ux-dropzone",
-            "version": "v2.8.0",
+            "version": "v2.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/ux-dropzone.git",
@@ -3874,7 +3874,7 @@
                 "symfony-ux"
             ],
             "support": {
-                "source": "https://github.com/symfony/ux-dropzone/tree/v2.8.0"
+                "source": "https://github.com/symfony/ux-dropzone/tree/v2.8.1"
             },
             "funding": [
                 {
@@ -4398,5 +4398,5 @@
         "ext-iconv": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }
