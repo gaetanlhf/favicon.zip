@@ -109,9 +109,6 @@ html {
     color: inherit;
     font: inherit;
     line-height: normal;
-    -webkit-font-smoothing: inherit;
-    -moz-osx-font-smoothing: inherit;
-    -webkit-appearance: none;
 }
 
 .dropzone-preview-button::before {
@@ -163,13 +160,15 @@ html {
     color: #9e9e9e !important;
 }
 
+@media (prefer-color-scheme: white) {
+    #logo {
+        filter: invert();
+    }
+}
+
 @media (prefers-color-scheme: dark) {
     #name {
         color: #b1b1b1;
-    }
-
-    #logo {
-        filter: invert();
     }
 
     .shadow-lg {

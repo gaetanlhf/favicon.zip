@@ -1,10 +1,9 @@
 {
-    "name": "Faviconator",
-    "short_name": "Faviconator",
+    "name": "favicon.zip",
+    "short_name": "favicon.zip",
     "lang": "en",
     "start_url": "/",
-    "icons": [
-        {
+    "icons": [{
             "src": "/android-chrome-36x36.png",
             "sizes": "36x36",
             "type": "image/png",

@@ -1,6 +1,6 @@
 <p align="center"><img src="/public/android-chrome-96x96.png"></p>
-<h2 align="center">Faviconator</h2>
-<p align="center">A new and easy way to generate favicons</p>
+<h2 align="center">favicon.zip</h2>
+<p align="center">Quickly and easily generate a .zip file containing your favicons of different sizes and formats and the corresponding code</p>
 <p align="center">
     <a href="#about">About</a> •
     <a href="#features">Features</a> •
@@ -22,6 +22,7 @@ That's why this feature-packed tool was created.
 - ✅ Can **generate** **old Apple favicons**
 - ✅ Can **generate** **Microsoft favicons** and **tiles** and **browserconfig.xml** (with possible customisation of the tile colour)
 - ✅ **Generates** the **HTML code** to be integrated in your pages, **taking into account** the **parameters** activated or not
+- 🗃️ All contained in a compressed **.zip file**
 - ✨ A **simple** and **beautiful** interface
 - 🌙 An **elegant dark mode** activated according to the settings of your browser or operating system
 
