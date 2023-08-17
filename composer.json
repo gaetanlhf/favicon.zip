@@ -7,9 +7,9 @@
         "type": "package",
         "package": {
             "name": "jdz/favicon",
-            "version": "2.0.3",
+            "version": "2.0.3.1",
             "source": {
-                "url": "https://github.com/joffreydemetz/favicon.git",
+                "url": "https://github.com/gaetanlhf/faviconlib.git",
                 "type": "git",
                 "reference": "master"
             }
@@ -20,7 +20,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "doctrine/annotations": "^1.13",
-        "jdz/favicon": "^2.0",
+        "jdz/favicon": "2.0.3.*",
         "symfony/apache-pack": "^1.0",
         "symfony/console": "5.4.*",
         "symfony/dotenv": "5.4.*",
