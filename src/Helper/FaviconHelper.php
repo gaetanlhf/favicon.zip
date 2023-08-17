@@ -17,11 +17,31 @@ class FaviconHelper
     public function __construct(FlashBagInterface $flashBag, Filesystem $filesystem)
     {
         $this->flashBag = $flashBag;
-        $this->filesystem =$filesystem;
+        $this->filesystem = $filesystem;
     }
 
-    public function generate(string $path, string $id, string $appName, string $shortAppName, string $language, string $startUrl, string $themeColour, string $backgoundColour, string $display, bool $sixtyFourIco, bool $fortyEightIco, bool $apple, bool $android, bool $ms, string $tileColour): Response
+    public function generate(string $path, string $id, string $appName = null, string $shortAppName = null, string $language = null, string $startUrl = null, string $themeColour = null, string $backgoundColour = null, string $display = null, bool $sixtyFourIco = null, bool $fortyEightIco = null, bool $apple = null, bool $android = null, bool $ms = null, string $tileColour = null, int $tilePadding = null): Response
     {
+
+        $hexColorPattern = '/^#(?:[0-9a-fA-F]{3}){1,2}$/';
+
+        if ($android && (!$appName || !$shortAppName || !$language || !$startUrl || !$themeColour || !$backgoundColour) || $ms && (!$tileColour || !$tilePadding)) {
+            $this->flashBag->add("generator_error", "You have not filled out some fields correctly.");
+            return new RedirectResponse("/");
+        }
+        if ($themeColour && !preg_match($hexColorPattern, $themeColour)) {
+            $this->flashBag->add("generator_error", "Invalid theme color format. Expected hexadecimal color.");
+            return new RedirectResponse("/");
+        }
+        if ($backgoundColour && !preg_match($hexColorPattern, $backgoundColour)) {
+            $this->flashBag->add("generator_error", "Invalid background color format. Expected hexadecimal color.");
+            return new RedirectResponse("/");
+        }
+        if ($tileColour && !preg_match($hexColorPattern, $tileColour)) {
+            $this->flashBag->add("generator_error", "Invalid tile color format. Expected hexadecimal color.");
+            return new RedirectResponse("/");
+        }
+
         $config = array_merge([
             "filePath"      => $path . $id . ".png",
             "destPath"      => $path . $id . "/",
@@ -36,7 +56,9 @@ class FaviconHelper
             "use48Icon"     => $fortyEightIco,
             "noOldApple"    => !$apple,
             "noAndroid"     => !$android,
-            "noMs"          => !$ms
+            "noMs"          => !$ms,
+            "tileColor"     => $tileColour,
+            "tilePadding"   => $tilePadding
         ]);
         $generator = new Generator($config);
         try {
