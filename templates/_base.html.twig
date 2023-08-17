@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="h-100" lang="en">
+<html lang="en">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>
@@ -24,13 +24,13 @@
 	<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png"/>
 	<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png"/>
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png"/>
-	<meta name="description" content="A new and easy way to generate favicons"/>
-	<meta name="keywords" content="generate, favicon, easy, code, html, web, png">
+	<meta name="description" content="Quickly and easily generate a .zip file containing your favicons of different sizes and formats and the corresponding code."/>
+	<meta name="keywords" content="generate, favicon, easy, code, html, web, png, manifest, webmanifest">
 	<meta name="author" content="{{ author_name }}"/>
 	{% block stylesheets %}
 		{{ encore_entry_link_tags("app") }}
 	{% endblock %}
-</head><body class="d-flex flex-column h-100">
+</head><body class="d-flex flex-column">
 <div class="spinner-container">
 	<div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
 		<div class="spinner-border" role="status">
@@ -38,8 +38,7 @@
 		</div>
 	</div>
 </div>
-<div class="d-flex flex-column h-100" id="main">
-	<a class="github-fork-ribbon left-top" href="{{ git_link }}" data-ribbon="⭐ Star me on GitHub ⭐" title="⭐ Star me on GitHub ⭐" aria-hidden="true">⭐ Star me on GitHub ⭐</a>
+<div class="d-flex flex-column" id="main">
 	{% include "_header.html.twig" %}
 	{% block body %}{% endblock %}
 	{% include "_footer.html.twig" %}

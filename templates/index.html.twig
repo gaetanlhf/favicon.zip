@@ -1,68 +1,214 @@
 {% extends "_base.html.twig" %}
 
 {% block title %}
-	{{ app_name }}
+	Your Favicon Generator for perfect icons on all devices
 {% endblock %}
 
 {% block body %}
 	<div class="container my-5">
-		<div class="row p-4 pb-0 pt-lg-5 p-lg-5 align-items-center rounded-3 border shadow-lg">
-			<div class="text-center">
-				<div class="d-block mx-auto align-items-center">
-					<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="75" height="75" viewbox="0 0 200 200" id="logo" aria-hidden="true">
-						<g style="fill:#fff;fill-opacity:.99645"><rect width="181.486" height="180.489" x="13.005" y="-.823" fill="#00f" fill-opacity=".75" fill-rule="evenodd" ry="37.985" style="fill:#fff;fill-opacity:.99645;stroke:none;stroke-width:11.2855;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="matrix(1.10201 0 0 1.1081 -14.332 .912)"/></g>
-						<g style="fill:#212529;fill-opacity:1;stroke:none"><path d="M-57.29 68.508h-50a12.5 12.5 0 0 0-12.5 12.5v75a12.5 12.5 0 0 0 12.5 12.5h50a12.5 12.5 0 0 0 12.5-12.5v-75a12.5 12.5 0 0 0-12.5-12.5zm-56.25 12.5a6.25 6.25 0 0 1 6.25-6.25h50a6.25 6.25 0 0 1 6.25 6.25v50l-13.018-13.019a3.125 3.125 0 0 0-4.75.394l-13.482 18.875-13.53-8.125a3.125 3.125 0 0 0-3.82.475l-13.9 13.9z" style="fill:#212529;fill-opacity:1;stroke:none;stroke-width:6.25" transform="matrix(1.07266 0 0 1.07266 -126.527 -32.662)"/><g style="fill:#212529;fill-opacity:1;stroke:none"><path d="M-27.04 100.42a6.25 6.25 0 0 1 6.25-6.25h6.25a6.25 6.25 0 0 1 6.25 6.25v5.863l2.5 9.993a6.25 6.25 0 0 1-2.6 6.713l-5.812 3.875a6.25 6.25 0 0 1-6.938 0l-5.806-3.875a6.25 6.25 0 0 1-2.594-6.713l2.5-9.993zm12.5 0h-6.25v5.863a6.25 6.25 0 0 1-.187 1.518l-2.5 9.988 5.812 3.875 5.806-3.875-2.5-9.988a6.25 6.25 0 0 1-.181-1.518zM-11.415 59.795v6.25h-6.25v6.25h6.25v6.25h-6.25v6.25h6.25v6.25h-9.375v-6.25h-6.25v-6.25h6.25v-6.25h-6.25v-6.25h6.25v-6.25h9.375z" style="fill:#212529;fill-opacity:1;stroke:none;stroke-width:6.25" transform="matrix(.77473 0 0 .77473 -211.141 .935)"/></g><path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641Z" style="fill:#212529;fill-opacity:1;stroke:none;stroke-width:.169278;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="matrix(6.34663 0 0 6.34663 185.948 5.691)"/></g><path d="M62.582 0v6.25h-6.25v6.25h6.25v6.25h-6.25V25h6.25v6.25h-9.375V25h-6.25v-6.25h6.25V12.5h-6.25V6.25h6.25V0h9.375zM46.957 65.625a6.25 6.25 0 0 1 6.25-6.25h6.25a6.25 6.25 0 0 1 6.25 6.25v5.862l2.5 9.994a6.25 6.25 0 0 1-2.6 6.713l-5.812 3.875a6.25 6.25 0 0 1-6.938 0l-5.806-3.875a6.25 6.25 0 0 1-2.594-6.713l2.5-9.993zm12.5 0h-6.25v5.862a6.25 6.25 0 0 1-.187 1.52l-2.5 9.987 5.812 3.875 5.806-3.875-2.5-9.988a6.25 6.25 0 0 1-.181-1.519z" style="stroke-width:6.25;fill:#212529;fill-opacity:1"/><path d="M62.582 25v6.25h-6.25v6.25h6.25v6.25h-6.25V50h6.25v6.25h-9.375V50h-6.25v-6.25h6.25V37.5h-6.25v-6.25h6.25V25h9.375z" style="stroke-width:6.25;fill:#212529;fill-opacity:1"/></svg>
-				</div>
-				<h1 class="display-5 fw-bold">Welcome to your new favourite favicon generator</h1>
-				<div class="col-lg-6 mx-auto">
-					<p class="lead mb-4">Quickly and easily generate a .zip file containing your favicons of different sizes and formats and the corresponding code.</p>
+		<div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-3">
+			<div class="col d-flex flex-column align-items-start gap-2">
+				<h2 class="fw-bold text-body-emphasis">Welcome to your new favourite Favicon Generator</h2>
+				<p class="text-body-secondary">Quickly and easily generate a .zip file containing your favicons of different sizes and formats and the corresponding code.</p>
+			</div>
+
+			<div class="col">
+				<div class="row row-cols-1 g-4">
+					<noscript>
+						<div class="container">
+							<div class="alert alert-danger">
+								<i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i>
+								Please enable JavaScript to use
+								{{ app_name }}.
+							</div>
+						</div>
+					</noscript>
+					<div class="container" id="use-js">
+						{% for message in app.flashes("generator_error") %}
+							<div class="alert alert-danger alert-dismissible fade show">
+								<i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i>
+								{{ message }}
+								<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+							</div>
+						{% endfor %}
+						{% for messages in app.flashes("form_error") %}
+							<div class="alert alert-danger alert-dismissible fade show">
+								<i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i>
+								{% for message in messages %}
+									{{ message }}<br>
+								{% endfor %}
+								<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+							</div>
+						{% endfor %}
+						<div id="successAlert"></div>
+						<div class="d-flex mb-3 align-items-center">
+							<div>
+								<button type="button" class="btn btn-secondary btn-sm" onclick="window.location.reload();">
+									<i class="bi bi-arrow-clockwise bi-fw" aria-hidden="true"></i>
+								</button>
+							</div>
+							<div class="ms-auto">
+								<button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#settings">
+									<i class="bi bi-gear-fill bi-fw" aria-hidden="true"></i>
+								</button>
+							</div>
+						</div>
+						{{ form_start(faviconForm, {"action": path("app_generate"), "method": "POST"}) }}
+						{{ form_widget(faviconForm.drop) }}
+						<div class="d-flex justify-content-center flex-column mt-3">
+							{{ form_row(faviconForm.submit) }}
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<noscript>
-		<div class="container">
-			<div class="alert alert-danger fade show">
-				<i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i>
-				Please enable JavaScript to use
-				{{ app_name }}.
+
+	<div class="container">
+		<h2 class="pb-2 border-bottom">Why favicon.zip?</h2>
+		<div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+			<div class="col d-flex align-items-start">
+				<div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+					<i class="bi bi-hand-thumbs-up-fill"></i>
+				</div>
+				<div>
+					<h3 class="fs-2 text-body-emphasis">Easy to use</h3>
+					<p>favicon.zip has been designed to be as easy to use as possible while offering an excellent user experience. Drag and drop your image, set the generation parameters, it's that simple.</p>
+				</div>
+			</div>
+			<div class="col d-flex align-items-start">
+				<div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+					<i class="bi bi-gear-fill"></i>
+				</div>
+				<div>
+					<h3 class="fs-2 text-body-emphasis">Adjust Favicon Generation</h3>
+					<p>Use the settings window to choose the different types of favicon you want: add some that are no longer required for greater compatibility, set the favicon for Chrome/Android and their manifest, and much more.</p>
+				</div>
+			</div>
+			<div class="col d-flex align-items-start">
+				<div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+					<i class="bi bi-code-slash"></i>
+				</div>
+				<div>
+					<h3 class="fs-2 text-body-emphasis">Code Generation</h3>
+					<p>favicon.zip automatically generates the code to be inserted into your website for easy integration!</p>
+				</div>
+			</div>
+			<div class="col d-flex align-items-start">
+				<div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+					<i class="bi bi-braces"></i>
+				</div>
+				<div>
+					<h3 class="fs-2 text-body-emphasis">Manifest Generation</h3>
+					<p>When you activate favicon generation for Chrome/Android, favicon.zip helps you create the webmanifest needed for the modern Web.</p>
+				</div>
+			</div>
+			<div class="col d-flex align-items-start">
+				<div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+					<i class="bi bi-download"></i>
+				</div>
+				<div>
+					<h3 class="fs-2 text-body-emphasis">Easy Downloading</h3>
+					<p>Your favicons of different sizes and formats and the corresponding code are added in a .zip file for easy downloading: this website is aptly named!</p>
+				</div>
+			</div>
+			<div class="col d-flex align-items-start">
+				<div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+					<i class="bi bi-shield-shaded"></i>
+				</div>
+				<div>
+					<h3 class="fs-2 text-body-emphasis">Privacy</h3>
+					<p>favicon.zip does not use trackers and your images are automatically deleted once your favicons have been generated.</p>
+				</div>
 			</div>
 		</div>
-	</noscript>
-	<div class="container" id="use-js">
-		{% for message in app.flashes("generator_error") %}
-			<div class="alert alert-danger alert-dismissible fade show">
-				<i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i>
-				{{ message }}
-				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+
+
+	<div class="container">
+		<h2 class="pb-2 border-bottom">OK, favicon.zip is great, but what is a favicon?</h2>
+		<div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+			<div class="col d-flex align-items-start">
+				<div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+					<i class="bi bi-question-circle-fill"></i>
+				</div>
+				<div>
+					<h3 class="fs-2 text-body-emphasis">What is a favicon?</h3>
+					<p>A favicon, short for "favorite icon", is a small, distinctive icon associated with a website or web page. Typically displayed in the browser's address bar, tabs, and bookmarks, favicons serve as a visual representation of the website and help users easily identify and differentiate between various open tabs.</p>
+				</div>
 			</div>
-		{% endfor %}
-		{% for messages in app.flashes("form_error") %}
-			<div class="alert alert-danger alert-dismissible fade show">
-				<i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i>
-				{% for message in messages %}
-					{{ message }}<br>
-				{% endfor %}
-				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			<div class="col d-flex align-items-start">
+				<div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+					<i class="bi bi-search"></i>
+				</div>
+				<div>
+					<h3 class="fs-2 text-body-emphasis">Branding and Recognition</h3>
+					<p>Favicons serve as a visual extension of a website's branding. By incorporating a logo or a recognizable symbol into the favicon, websites can reinforce their identity and make it easier for users to recognize and remember them among a sea of open tabs.</p>
+				</div>
 			</div>
-		{% endfor %}
-		<div id="successAlert"></div>
-		<div class="d-flex mb-3 align-items-center">
-			<div>
-				<button type="button" class="btn btn-primary btn-sm" onclick="window.location.reload();">
-					<i class="bi bi-arrow-clockwise bi-fw" aria-hidden="true"></i>
-				</button>
+			<div class="col d-flex align-items-start">
+				<div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+					<i class="bi bi-briefcase-fill"></i>
+				</div>
+				<div>
+					<h3 class="fs-2 text-body-emphasis">Professionalism</h3>
+					<p>Including a favicon in a website's design gives it a more polished and professional appearance. It shows that attention has been paid to even the smallest details, contributing to an overall positive impression of the website.</p>
+				</div>
 			</div>
-			<div class="ms-auto">
-				<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#settings">
-					<i class="bi bi-gear-fill bi-fw" aria-hidden="true"></i>
-				</button>
+			<div class="col d-flex align-items-start">
+				<div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+					<i class="bi bi-person-check-fill"></i>
+				</div>
+				<div>
+					<h3 class="fs-2 text-body-emphasis">User Experience</h3>
+					<p>Favicons contribute to a better user experience by providing visual cues. They help users quickly identify and navigate to the desired website among numerous open tabs, making the browsing process more efficient.</p>
+				</div>
 			</div>
-		</div>
-		{{ form_start(faviconForm, {"action": path("app_generate"), "method": "POST"}) }}
-		{{ form_widget(faviconForm.drop) }}
-		<div class="d-flex justify-content-center flex-column mt-3">
-			{{ form_row(faviconForm.submit) }}
+			<div class="col d-flex align-items-start">
+				<div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+					<i class="bi bi-bookmark-fill"></i>
+				</div>
+				<div>
+					<h3 class="fs-2 text-body-emphasis">Bookmarking</h3>
+					<p>When users bookmark a website, the favicon often appears alongside the website's name in the bookmarks list. This visual element makes the list more visually appealing and aids users in locating their desired bookmarks more easily.</p>
+				</div>
+			</div>
+			<div class="col d-flex align-items-start">
+				<div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+					<i class="bi bi-segmented-nav"></i>
+				</div>
+				<div>
+					<h3 class="fs-2 text-body-emphasis">Tab Management</h3>
+					<p>In modern browsers, favicons are displayed on individual tabs. This helps users distinguish between multiple open tabs at a glance, especially when they have several tabs open simultaneously.</p>
+				</div>
+			</div>
+			<div class="col d-flex align-items-start">
+				<div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+					<i class="bi bi-graph-up-arrow"></i>
+				</div>
+				<div>
+					<h3 class="fs-2 text-body-emphasis">SEO and Credibility</h3>
+					<p>While not a direct ranking factor, having a favicon can indirectly contribute to a website's credibility and user engagement. Users tend to trust and click on websites with recognizable and consistent branding elements.</p>
+				</div>
+			</div>
+			<div class="col d-flex align-items-start">
+				<div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+					<i class="bi bi-phone-fill"></i>
+				</div>
+				<div>
+					<h3 class="fs-2 text-body-emphasis">Cross-Platform Consistency</h3>
+					<p>Favicons ensure a consistent branding experience across various platforms and devices, ranging from desktops to smartphones and tablets.</p>
+				</div>
+			</div>
+			<div class="col d-flex align-items-start">
+				<div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+					<i class="bi bi-universal-access-circle"></i>
+				</div>
+				<div>
+					<h3 class="fs-2 text-body-emphasis">Accessibility</h3>
+					<p>Some assistive technologies and screen readers can use favicons to provide additional context to users, enhancing the accessibility of the website.</p>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="modal fade py-5" tabindex="-1" role="dialog" aria-labelledby="settingsLabel" aria-hidden="true" data-bs-keyboard="false" id="settings">
@@ -105,14 +251,18 @@
 						<div class="mb-3">
 							{{ form_row(faviconForm.tileColour) }}
 						</div>
+						<div class="mb-3">
+							{{ form_row(faviconForm.tilePadding) }}
+						</div>
 					</div>
 				</div>
 				<div class="modal-footer flex-column border-top-0">
-					<button type="button" class="btn btn-primary btn-lg w-100 mx-0" data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-secondary btn-lg w-100 mx-0" data-bs-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>
 	</div>
+
 	{{ form_row(faviconForm.downloadToken) }}
 	{{ form_end(faviconForm) }}
 {% endblock %}

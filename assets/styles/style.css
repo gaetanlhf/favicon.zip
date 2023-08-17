@@ -3,20 +3,26 @@ html {
     min-height: 100%;
 }
 
+body {
+    background-image: linear-gradient(180deg, var(--bs-secondary-bg), var(--bs-body-bg) 100px, var(--bs-body-bg));
+}
+
 #use-js {
     visibility: hidden;
 }
 
+#logo {
+    filter: invert(100%);
+}
+
+@media (prefers-color-scheme: dark) {
+    #logo {
+        filter: invert(0%);
+    }
+}
+
 .heart {
     color: red;
-}
-
-.github-fork-ribbon {
-    z-index: 100;
-}
-
-.github-fork-ribbon:before {
-    background-color: rgb(33, 37, 41);
 }
 
 .bi {
@@ -46,13 +52,62 @@ html {
     text-align: center;
 }
 
+.feature-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: .75rem;
+}
+
+.icon-square {
+    width: 3rem;
+    height: 3rem;
+    border-radius: .75rem;
+}
+
+.text-shadow-1 {
+    text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .25);
+}
+
+.text-shadow-2 {
+    text-shadow: 0 .25rem .5rem rgba(0, 0, 0, .25);
+}
+
+.text-shadow-3 {
+    text-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .25);
+}
+
+.card-cover {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.feature-icon-small {
+    width: 3rem;
+    height: 3rem;
+}
+
+.form-check-input:focus {
+    border-color: #565e64;
+    box-shadow: 0 0 0 .25rem #5c636a7a;
+    outline: 0;
+}
+
+.form-check-input:checked {
+    background-color: #5c636a;
+    border-color: #565e64;
+}
+
+.form-switch .form-check-input:focus {
+    --bs-form-switch-bg: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%565e64fe'/%3E%3C/svg%3E");
+}
+
 .dropzone-container {
     min-height: auto;
     text-align: center;
     cursor: pointer;
-    border: 1px solid #dee2e6 !important;
-    background-color: #ffffff;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
+    border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
     border-radius: .3rem !important;
     position: relative;
     display: flex;
@@ -133,7 +188,7 @@ html {
 }
 
 .dropzone-placeholder::after {
-    content: "\a  Image in .png format and less than 1 MB in size";
+    content: "\a  310x310 or more for optimal results";
     font-size: 12px;
     font-weight: 400;
     white-space: pre;
@@ -155,35 +210,8 @@ html {
     height: 3rem;
 }
 
-.text-muted a {
-    text-decoration: none;
-    color: #9e9e9e !important;
-}
-
 @media (prefer-color-scheme: white) {
     #logo {
         filter: invert();
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    #name {
-        color: #b1b1b1;
-    }
-
-    .shadow-lg {
-        box-shadow: 0 1rem 3rem rgba(255, 255, 255, .175) !important;
-    }
-
-    .dropzone-container {
-        align-items: center;
-        background-color: #222222;
-        border: 1px solid #515151 !important;
-        border-radius: .3rem !important;
-        box-shadow: 0 1rem 3rem rgba(255, 255, 255, .175) !important;
-    }
-
-    .border {
-        border: 1px solid #515151 !important;
     }
 }
