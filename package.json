@@ -1,11 +1,11 @@
 {
     "devDependencies": {
-        "@hotwired/stimulus": "^3.2.1",
+        "@hotwired/stimulus": "^3.2.2",
         "@symfony/stimulus-bridge": "^3.2.2",
         "@symfony/ux-dropzone": "file:vendor/symfony/ux-dropzone/assets",
         "@symfony/webpack-encore": "^4.4.0",
-        "core-js": "^3.32.0",
-        "regenerator-runtime": "^0.13.11",
+        "core-js": "^3.33.0",
+        "regenerator-runtime": "^0.14.0",
         "webpack-notifier": "^1.15.0"
     },
     "license": "AGPL-3.0-or-later",
@@ -17,8 +17,8 @@
         "build": "encore production --progress"
     },
     "dependencies": {
-        "bootstrap": "^5.3.1",
-        "bootstrap-icons": "^1.10.5",
+        "bootstrap": "^5.3.2",
+        "bootstrap-icons": "^1.11.1",
         "github-fork-ribbon-css": "^0.2.3",
         "sass": "^1.69.0",
         "sass-loader": "^13.3.2"
