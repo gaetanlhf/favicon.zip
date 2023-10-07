@@ -72,7 +72,7 @@ class FaviconFormType extends AbstractType
                 "class" => "form-floating",
             ], "required" => false])
             ->add("downloadToken", HiddenType::class)
-            ->add("submit", SubmitType::class, ["label" => "Generate", "attr" => ["class" => "btn btn-secondary btn-lg w-100 mx-0"]]);
+            ->add("submit", SubmitType::class, ["label" => "Generate", "attr" => ["class" => "btn btn-primary btn-lg w-100 mx-0"]]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

@@ -1,6 +1,5 @@
-import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap-icons/font/bootstrap-icons.css"
-import "./styles/style.css";
+import "./styles/style.scss";
 
 import {
     Alert
@@ -96,22 +95,6 @@ window.onsubmit = function() {
         }, 5000);
     }
 }
-
-const setTheme = theme => {
-    if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.setAttribute('data-bs-theme', 'dark');
-    } else {
-        document.documentElement.setAttribute('data-bs-theme', theme);
-    }
-};
-
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-    setTheme('auto');
-});
-
-window.addEventListener('DOMContentLoaded', () => {
-    setTheme('auto');
-});
 
 // start the Stimulus application
 import './bootstrap';

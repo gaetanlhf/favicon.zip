@@ -19,6 +19,8 @@
     "dependencies": {
         "bootstrap": "^5.3.1",
         "bootstrap-icons": "^1.10.5",
-        "github-fork-ribbon-css": "^0.2.3"
+        "github-fork-ribbon-css": "^0.2.3",
+        "sass": "^1.69.0",
+        "sass-loader": "^13.3.2"
     }
 }
