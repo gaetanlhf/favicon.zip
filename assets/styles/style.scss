@@ -63,7 +63,7 @@ $btn-link-color: #fff;
 // @import "bootstrap/scss/navbar"; // Requires nav
 @import "bootstrap/scss/card";
 // @import "bootstrap/scss/breadcrumb";
-// @import "bootstrap/scss/accordion";
+@import "bootstrap/scss/accordion";
 // @import "bootstrap/scss/pagination";
 // @import "bootstrap/scss/badge";
 @import "bootstrap/scss/alert";
@@ -147,20 +147,64 @@ body {
     color: $primary !important;
 }
 
-.feature-icon {
-    width: 4rem;
-    height: 4rem;
-    border-radius: .75rem;
+.card {
+    border-radius: 40px;
 }
 
-.icon-square {
-    width: 3rem;
-    height: 3rem;
-    border-radius: .75rem;
+#card-one {
+    background-color: #c8564b;
+    color: #fff;
 }
 
-.icon-square .bi {
+#card-two {
+    background-color: #ac4c71;
+    color: #fff;
+}
+
+#card-three {
+    background-color: #795081;
+    color: #fff;
+}
+
+#card-four {
+    background-color: #465075;
+    color: #fff;
+}
+
+#card-five {
+    background-color: #2f4858;
+    color: #fff;
+}
+
+#card-six {
+    background-color: #007968;
+    color: #fff;
+}
+
+#card-try {
+    background-color: #ededed;
+    color: $body-color;
+}
+
+#card-buy {
+    background-image: linear-gradient(156deg, #e3b58a 35%, #ffebcd 100%);
+}
+
+.card {
+    border: none;
+    border-radius: 10px
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    background-color: #eee;
     color: $primary;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 39px;
 }
 
 .text-shadow-1 {
@@ -273,8 +317,7 @@ body {
     display: block;
     margin-bottom: -0.5rem;
     font-size: 3rem;
-    font-family: bootstrap-icons;
-    content: "\F296";
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='rgb(153, 153, 153)' viewBox='0 0 16 16'%3E%3Cpath d='M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2zm2.354 5.146a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2z'/%3E%3C/svg%3E");
 }
 
 .dropzone-placeholder::after {
@@ -303,4 +346,8 @@ body {
     width: 3rem;
     height: 3rem;
     color: $primary;
+}
+
+.colored-footer {
+    background-image: linear-gradient(180deg, var(--bs-body-bg), rgba(194, 119, 22, 0.30) 70px, var(--bs-body-bg));
 }

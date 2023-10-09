@@ -1,9 +1,11 @@
-import "bootstrap-icons/font/bootstrap-icons.css"
 import "./styles/style.scss";
 
 import {
-    Alert
+    Alert,
+    Accordion
 } from "bootstrap";
+
+import "masonry-layout";
 
 document.addEventListener("DOMContentLoaded", function() {
     document.querySelector("#use-js").style.visibility = "visible";
