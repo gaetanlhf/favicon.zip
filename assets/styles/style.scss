@@ -37,7 +37,7 @@ $offcanvas-box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
 $body-color: #333;
 $body-bg: #fff;
 $border-radius: .4rem;
-$primary: #c27716;
+$primary: #24837B;
 $btn-link-color: #fff;
 
 // Required
@@ -53,7 +53,7 @@ $btn-link-color: #fff;
 // @import "bootstrap/scss/images";
 @import "bootstrap/scss/containers";
 @import "bootstrap/scss/grid";
-@import "bootstrap/scss/tables";
+// @import "bootstrap/scss/tables";
 @import "bootstrap/scss/forms";
 @import "bootstrap/scss/buttons";
 @import "bootstrap/scss/transitions";
@@ -100,7 +100,7 @@ $btn-link-color: #fff;
 
 body {
     font-family: "Varela Round", sans-serif;
-    background-image: linear-gradient(180deg, rgba(194, 119, 22, 0.30), var(--bs-body-bg) 100px, var(--bs-body-bg));
+    background-image: linear-gradient(180deg, rgba(31, 111, 105, 0.40), var(--bs-body-bg) 100px, var(--bs-body-bg));
 }
 
 #use-js {
@@ -152,42 +152,33 @@ body {
 }
 
 #card-one {
-    background-color: #c8564b;
+    background-color: #008397;
     color: #fff;
 }
 
 #card-two {
-    background-color: #ac4c71;
+    background-color: #0080ae;
     color: #fff;
 }
 
 #card-three {
-    background-color: #795081;
+    background-color: #5477b7;
     color: #fff;
 }
 
 #card-four {
-    background-color: #465075;
+    background-color: #8a6aad;
     color: #fff;
 }
 
 #card-five {
-    background-color: #2f4858;
+    background-color: #b05b91;
     color: #fff;
 }
 
 #card-six {
-    background-color: #007968;
+    background-color: #926c82;
     color: #fff;
-}
-
-#card-try {
-    background-color: #ededed;
-    color: $body-color;
-}
-
-#card-buy {
-    background-image: linear-gradient(156deg, #e3b58a 35%, #ffebcd 100%);
 }
 
 .card {
@@ -225,14 +216,9 @@ body {
     background-size: cover;
 }
 
-.feature-icon-small {
-    width: 3rem;
-    height: 3rem;
-}
-
 .form-check-input:focus {
-    border-color: #c27716;
-    box-shadow: 0 0 0 .25rem #c277167a;
+    border-color: #24837B;
+    box-shadow: 0 0 0 .25rem #24837B7a;
     outline: 0;
 }
 
@@ -349,5 +335,5 @@ body {
 }
 
 .colored-footer {
-    background-image: linear-gradient(180deg, var(--bs-body-bg), rgba(194, 119, 22, 0.30) 70px, var(--bs-body-bg));
+    background-image: linear-gradient(180deg, var(--bs-body-bg), rgba(31, 111, 105, 0.40) 80px, var(--bs-body-bg));
 }
