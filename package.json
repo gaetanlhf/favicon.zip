@@ -4,11 +4,11 @@
         "@hotwired/stimulus": "^3.2.2",
         "@symfony/stimulus-bridge": "^3.2.2",
         "@symfony/ux-dropzone": "file:vendor/symfony/ux-dropzone/assets",
-        "@symfony/webpack-encore": "^4.5.0",
-        "core-js": "^3.33.2",
-        "regenerator-runtime": "^0.14.0",
-        "sass": "^1.69.5",
-        "sass-loader": "^13.3.2",
+        "@symfony/webpack-encore": "^4.6.1",
+        "core-js": "^3.36.1",
+        "regenerator-runtime": "^0.14.1",
+        "sass": "^1.74.1",
+        "sass-loader": "^14.1.1",
         "webpack-notifier": "^1.15.0"
     },
     "license": "AGPL-3.0-or-later",
@@ -20,7 +20,7 @@
         "build": "encore production --progress"
     },
     "dependencies": {
-        "bootstrap": "^5.3.2",
+        "bootstrap": "^5.3.3",
         "masonry-layout": "^4.2.2"
     }
 }
